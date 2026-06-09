@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David O'Connell | Strategic Sales Manager Portfolio</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f5f5;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1280px;
+            margin: auto;
+        }
+
+        /* Navbar */
+        .navbar {
+            padding: 25px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            background: rgba(245, 245, 245, 0.95);
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 24px;
+        }
+
+        .logo-star {
+            color: #ff5533;
+            font-size: 20px;
+            animation: rotateStar 6s linear infinite;
+        }
+
+        @keyframes rotateStar {
+            from {
+                transform: rotate(0);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 50px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #111;
+            font-size: 14px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-menu a:after {
+            content: "";
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ff5533;
+            transition: .3s;
+        }
+
+        .nav-menu a:hover:after {
+            width: 100%;
+        }
+
+        .talk-btn {
+            border: 1px solid #111;
+            padding: 14px 26px;
+            text-decoration: none;
+            color: #111;
+            font-size: 14px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .talk-btn:hover {
+            background: #111;
+            color: #fff;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 120px;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero-title {
+            font-size: 68px;
+            font-weight: 900;
+            line-height: 1.08;
+            color: #111;
+            text-transform: uppercase;
+        }
+
+        .hero-title span {
+            color: #ff5533;
+            display: inline-block;
+            animation: rotateStar 6s linear infinite;
+        }
+
+        .hero-services {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 15px;
+        }
+
+        .hero-services div::before {
+            content: "✷";
+            color: #ff5533;
+            margin-right: 10px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .btn-dark {
+            background: #111;
+            color: #fff;
+            text-decoration: none;
+            padding: 16px 30px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .btn-dark:hover {
+            transform: translateY(-4px);
+        }
+
+        .btn-light {
+            border: 1px solid #111;
+            color: #111;
+            text-decoration: none;
+            padding: 16px 30px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .btn-light:hover {
+            background: #111;
+            color: #fff;
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .shape {
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border: 6px solid #ff5533;
+            top: 80px;
+            z-index: 1;
+            animation: floatShape 4s ease-in-out infinite;
+        }
+
+        @keyframes floatShape {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .shape:before,
+        .shape:after {
+            content: "";
+            position: absolute;
+            background: #f5f5f5;
+        }
+
+        .shape:before {
+            width: 80px;
+            height: 40px;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .shape:after {
+            width: 80px;
+            height: 40px;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 470px;
+            position: relative;
+            z-index: 2;
+            filter: grayscale(100%);
+            transition: 0.4s;
+        }
+
+        .hero-image img:hover {
+            filter: grayscale(0%);
+        }
+
+        .marquee {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: #111;
+            color: #fff;
+            overflow: hidden;
+            transform: rotate(-3deg);
+        }
+
+        .marquee-content {
+            display: flex;
+            gap: 60px;
+            padding: 18px 0;
+            white-space: nowrap;
+            animation: marquee 18s linear infinite;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .marquee-content span {
+            color: #ff5533;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* About Section with Strengths & Weaknesses */
+        .about-section {
+            padding: 120px 0;
+            background: #f5f5f5;
+        }
+
+        .about-top {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            gap: 80px;
+            align-items: flex-start;
+        }
+
+        .subtitle {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .star {
+            color: #ff5a36;
+            margin: 0 5px;
+            animation: rotateStar 5s linear infinite;
+            display: inline-block;
+        }
+
+        .about-left h2 {
+            font-size: 62px;
+            line-height: 1.05;
+            font-weight: 800;
+            color: #111;
+        }
+
+        .about-right h3 {
+            font-size: 38px;
+            line-height: 1.15;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 25px;
+        }
+
+        .about-right p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #777;
+            margin-bottom: 40px;
+        }
+
+        .about-info {
+            display: flex;
+            gap: 80px;
+            flex-wrap: wrap;
+        }
+
+        .info-box span {
+            display: block;
+            font-size: 11px;
+            color: #ff5a36;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .info-box h4 {
+            font-size: 24px;
+            color: #111;
+            font-weight: 700;
+        }
+
+        /* Strengths & Weakness Cards */
+        .swot-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 70px;
+        }
+
+        .strength-box,
+        .weakness-box {
+            background: #fff;
+            padding: 35px;
+            border: 1px solid #ddd;
+            transition: 0.3s;
+        }
+
+        .strength-box:hover,
+        .weakness-box:hover {
+            transform: translateY(-6px);
+            border-color: #ff5a36;
+        }
+
+        .strength-box h3,
+        .weakness-box h3 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .strength-box h3 i {
+            color: #2ecc71;
+            font-size: 32px;
+        }
+
+        .weakness-box h3 i {
+            color: #e74c3c;
+            font-size: 32px;
+        }
+
+        .strength-box ul,
+        .weakness-box ul {
+            list-style: none;
+        }
+
+        .strength-box li,
+        .weakness-box li {
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.5;
+            color: #444;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .strength-box li:before {
+            content: "✓";
+            color: #2ecc71;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .weakness-box li:before {
+            content: "!";
+            color: #e74c3c;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .counter-wrapper {
+            margin-top: 90px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border: 1px solid #111;
+        }
+
+        .counter-box {
+            text-align: center;
+            padding: 40px 20px;
+            background: #fff;
+            transition: .4s;
+        }
+
+        .counter-box:not(:last-child) {
+            border-right: 1px solid #111;
+        }
+
+        .counter-box h2 {
+            font-size: 70px;
+            font-weight: 800;
+            color: #111;
+            margin-bottom: 10px;
+        }
+
+        .counter-box p {
+            font-size: 12px;
+            font-weight: 700;
+            color: #666;
+            letter-spacing: 1px;
+        }
+
+        .counter-box.active {
+            background: #111;
+        }
+
+        .counter-box.active h2,
+        .counter-box.active p {
+            color: #fff;
+        }
+
+        .counter-box:hover {
+            transform: translateY(-8px);
+        }
+
+        /* Work Experience & Company Details */
+        .experience-section {
+            padding: 120px 0;
+            background: #f3f2ef;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-icon {
+            font-size: 36px;
+            color: #ff5a36;
+            margin-bottom: 10px;
+            display: inline-block;
+            animation: spin 8s linear infinite;
+        }
+
+        .section-title h2 {
+            font-size: 48px;
+            font-weight: 800;
+            color: #111;
+            margin-bottom: 10px;
+        }
+
+        .section-title span {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #444;
+        }
+
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 50px;
+            background: #fff;
+            padding: 30px;
+            border: 1px solid #e0e0e0;
+            transition: 0.3s;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(8px);
+            border-color: #ff5a36;
+        }
+
+        .timeline-year {
+            min-width: 120px;
+            font-weight: 800;
+            font-size: 24px;
+            color: #ff5a36;
+        }
+
+        .timeline-content h3 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .timeline-content .company {
+            color: #ff5a36;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        .timeline-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Awards / Achievements */
+        .awards-section {
+            padding: 120px 0;
+            background: #f3f2ef;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .awards-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .award-item {
+            border: 1px solid #111;
+            padding: 22px 28px;
+            background: #f3f2ef;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: .4s;
+        }
+
+        .award-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
+        }
+
+        .award-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .award-number {
+            width: 34px;
+            height: 34px;
+            background: #111;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .award-left h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 6px;
+        }
+
+        .award-left p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .award-right {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .side-star {
+            position: absolute;
+            right: -40px;
+            top: 55%;
+            transform: translateY(-50%);
+            font-size: 140px;
+            color: #ff5a36;
+            animation: rotateStar 15s linear infinite;
+            opacity: .95;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 120px 0;
+            background: #f5f5f5;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 40px;
+            border: 1px solid #ddd;
+            transition: 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            border-color: #ff5a36;
+        }
+
+        .testimonial-card p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #222;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .client-info img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Contact */
+        .contact-section {
+            padding: 120px 0;
+            background: #111;
+            color: #fff;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .contact-left h2 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 30px;
+        }
+
+        .contact-left p {
+            font-size: 18px;
+            color: #aaa;
+            margin-bottom: 40px;
+        }
+
+        .contact-details div {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-details span:first-child {
+            font-weight: 700;
+            color: #ff5a36;
+            width: 80px;
+        }
+
+        .contact-right input,
+        .contact-right textarea {
+            width: 100%;
+            padding: 18px;
+            margin-bottom: 20px;
+            background: transparent;
+            border: 1px solid #333;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .contact-right textarea {
+            height: 130px;
+            resize: none;
+        }
+
+        .submit-btn {
+            background: #ff5a36;
+            border: none;
+            color: white;
+            padding: 16px 30px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #fff;
+            color: #111;
+        }
+
+        .footer {
+            padding: 50px 0;
+            background: #000;
+            color: #aaa;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        @media (max-width:991px) {
+
+            .hero-grid,
+            .about-top,
+            .contact-grid,
+            .testimonial-grid,
+            .swot-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 50px;
+            }
+
+            .nav-menu,
+            .talk-btn {
+                display: none;
+            }
+
+            .counter-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .about-left h2 {
+                font-size: 40px;
+            }
+
+            .side-star {
+                display: none;
+            }
+        }
+
+        @media (max-width:576px) {
+            .hero-title {
+                font-size: 38px;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+            }
+
+            .strength-box h3,
+            .weakness-box h3 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo"><span class="logo-star">✷</span> david.o</div>
+                <ul class="nav-menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Experience</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <a href="#" class="talk-btn">Let's connect</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content" data-aos="fade-right">
+                    <h1 class="hero-title">HI, I'M DAVID.<br>STRATEGIC <span>✷</span> SALES LEADER<br>REVENUE
+                        ACCELERATOR</h1>
+                    <div class="hero-services">
+                        <div>B2B Sales</div>
+                        <div>Enterprise Growth</div>
+                        <div>Team Leadership</div>
+                    </div>
+                    <div class="hero-btns"><a href="#" class="btn-dark">View Resume</a><a href="#"
+                            class="btn-light">Let's talk.</a></div>
+                </div>
+                <div class="hero-image" data-aos="fade-left">
+                    <div class="shape"></div>
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=700" alt="Sales Manager">
+                </div>
+            </div>
+        </div>
+        <div class="marquee">
+            <div class="marquee-content">REVENUE GROWTH <span>✷</span> NEGOTIATION <span>✷</span> CLOSING DEALS
+                <span>✷</span> STRATEGIC PLANNING <span>✷</span> CRM EXCELLENCE <span>✷</span> TEAM LEADERSHIP
+                <span>✷</span></div>
+        </div>
+    </section>
+
+    <!-- About + Strengths & Weaknesses -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-top">
+                <div class="about-left"><span class="subtitle">DAVID <span class="star">✷</span> O'CONNELL</span>
+                    <h2>Sales leader who builds <br>revenue engines &<br> high-performing teams.</h2>
+                </div>
+                <div class="about-right">
+                    <h3>14+ years of experience driving growth for global tech enterprises and startups.</h3>
+                    <p>I specialize in transforming sales operations, leading strategic negotiations, and scaling
+                        revenue from $10M to $100M+. My philosophy: combine data-driven insights with authentic
+                        relationships. Based in Austin, TX.</p>
+                    <div class="about-info">
+                        <div class="info-box"><span>BASED IN</span>
+                            <h4>Austin, TX</h4>
+                        </div>
+                        <div class="info-box"><span>EXPERIENCE</span>
+                            <h4>14+ Years</h4>
+                        </div>
+                        <div class="info-box"><span>TOP VERTICAL</span>
+                            <h4>SaaS & Fintech</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strengths & Weakness Grid -->
+            <div class="swot-wrapper">
+                <div class="strength-box" data-aos="fade-right">
+                    <h3><i class="fas fa-chart-line"></i> Core Strengths</h3>
+                    <ul>
+                        <li>Strategic Pipeline Management & Forecasting</li>
+                        <li>Enterprise-Level Negotiation (up to $50M deals)</li>
+                        <li>Building & Mentoring High-Velocity Sales Teams</li>
+                        <li>Data-Driven Revenue Operations & CRM Optimization</li>
+                        <li>Cross-Functional Leadership & Stakeholder Alignment</li>
+                        <li>Client Retention & Expansion (120% NRR)</li>
+                    </ul>
+                </div>
+                <div class="weakness-box" data-aos="fade-left">
+                    <h3><i class="fas fa-search"></i> Areas for Growth</h3>
+                    <ul>
+                        <li>Delegating early-stage tasks (learning to let go)</li>
+                        <li>Public speaking to massive audiences (working on it!)</li>
+                        <li>Over-committing to tight deadlines</li>
+                        <li>Occasional impatience with slow sales cycles</li>
+                        <li>Balancing macro strategy vs micro details</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="counter-wrapper">
+                <div class="counter-box">
+                    <h2>$280M+</h2>
+                    <p>REVENUE GENERATED</p>
+                </div>
+                <div class="counter-box active">
+                    <h2>97%</h2>
+                    <p>CLIENT RETENTION</p>
+                </div>
+                <div class="counter-box">
+                    <h2>52+</h2>
+                    <p>ENTERPRISE DEALS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience & Company Details Section -->
+    <section class="experience-section">
+        <div class="container">
+            <div class="section-title">
+                <div class="section-icon">✷</div>
+                <h2>Work Experience</h2>
+                <span>COMPANY DETAILS & LEADERSHIP ROLES</span>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-year">2022–Present</div>
+                    <div class="timeline-content">
+                        <h3>VP of Sales, Enterprise</h3>
+                        <div class="company">Nexify Technologies · Austin, TX</div>
+                        <p>Leading a 45-person sales team, drove annual recurring revenue from $42M to $98M in 24
+                            months. Revamped territory planning, implemented MEDDIC framework, and achieved 138% quota
+                            attainment. Closed strategic partnership with Fortune 100 logistics firm ($28M TCV).</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-year">2018–2022</div>
+                    <div class="timeline-content">
+                        <h3>Regional Sales Director</h3>
+                        <div class="company">CloudScale Dynamics · San Francisco, CA</div>
+                        <p>Oversaw Central & East regions. Grew pipeline by 210% and increased win rate from 24% to 41%.
+                            Hired and trained 12 AEs, built sales playbook adopted globally. Awarded "Sales Leader of
+                            the Year" twice.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-year">2014–2018</div>
+                    <div class="timeline-content">
+                        <h3>Senior Account Executive</h3>
+                        <div class="company">Stratify AI · New York, NY</div>
+                        <p>Managed top 20% of enterprise accounts. Closed $12M+ in new logos including 7-figure
+                            contracts. Consistently exceeded quota by 125%+. Built first formal account-based selling
+                            process.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="timeline-year">2011–2014</div>
+                    <div class="timeline-content">
+                        <h3>Business Development Manager</h3>
+                        <div class="company">Innovate Partners · Boston, MA</div>
+                        <p>Started career in B2B sales development, promoted twice within 2 years. Generated $5M in
+                            initial pipeline and helped launch partner channel program.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Recognitions -->
+    <section class="awards-section">
+        <div class="container">
+            <div class="section-title">
+                <div class="section-icon">✷</div>
+                <h2>Awards & Recognitions</h2>
+                <span>INDUSTRY HONORS</span>
+            </div>
+            <div class="awards-list">
+                <div class="award-item">
+                    <div class="award-left">
+                        <div class="award-number">1</div>
+                        <div>
+                            <h3>President's Club Winner</h3>
+                            <p>Top 1% Sales Performance Globally (2023, 2024)</p>
+                        </div>
+                    </div>
+                    <div class="award-right"><span>NEXIFY</span><strong>2024</strong></div>
+                </div>
+                <div class="award-item">
+                    <div class="award-left">
+                        <div class="award-number">2</div>
+                        <div>
+                            <h3>Sales Excellence Award</h3>
+                            <p>Largest Enterprise Deal of the Year ($28M TCV)</p>
+                        </div>
+                    </div>
+                    <div class="award-right"><span>STRATEGY</span><strong>2023</strong></div>
+                </div>
+                <div class="award-item">
+                    <div class="award-left">
+                        <div class="award-number">3</div>
+                        <div>
+                            <h3>Top Sales Leader of the Year</h3>
+                            <p>Sales Leader Summit Global Recognition</p>
+                        </div>
+                    </div>
+                    <div class="award-right"><span>LEADERSHIP</span><strong>2022</strong></div>
+                </div>
+                <div class="award-item">
+                    <div class="award-left">
+                        <div class="award-number">4</div>
+                        <div>
+                            <h3>Fastest Revenue Growth</h3>
+                            <p>280% YoY Growth in Emerging Markets</p>
+                        </div>
+                    </div>
+                    <div class="award-right"><span>GROWTH</span><strong>2020</strong></div>
+                </div>
+            </div>
+            <div class="side-star">✷</div>
+        </div>
+    </section>
+
+    <!-- Testimonials from Clients & Colleagues -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-title">
+                <div class="section-icon">✷</div>
+                <h2>What People Say</h2>
+                <span>COLLEAGUES & CLIENTS</span>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card" data-aos="fade-up">
+                    <p>“David turned our sales team around in just two quarters. His strategic clarity and motivation
+                        are unmatched. We exceeded our annual target by 35%.”</p>
+                    <div class="client-info"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="client">
+                        <div>
+                            <h4>Sarah Jenkins</h4><span>CMO, Nexify</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <p>“A master closer and an even better mentor. David helped me negotiate my first seven-figure deal.
+                        I learned more from him than any sales book.”</p>
+                    <div class="client-info"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="client">
+                        <div>
+                            <h4>Marcus Thorne</h4><span>Senior AE, CloudScale</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <p>“Working with David on our enterprise renewal was seamless. He understood our business challenges
+                        and proposed value-driven solutions. Highly recommend.”</p>
+                    <div class="client-info"><img src="https://randomuser.me/api/portraits/women/45.jpg" alt="client">
+                        <div>
+                            <h4>Linda Park</h4><span>Procurement Director, OmniCorp</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <p>“He doesn't just sell — he builds ecosystems. The partnerships David forged for us are still
+                        generating revenue years later.”</p>
+                    <div class="client-info"><img src="https://randomuser.me/api/portraits/men/52.jpg" alt="client">
+                        <div>
+                            <h4>James Carter</h4><span>CEO, StrataFlow</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-left" data-aos="fade-right">
+                    <h2>Let's drive <br> revenue together.</h2>
+                    <p>Looking for a sales leader who delivers measurable impact? Let's connect.</p>
+                    <div class="contact-details">
+                        <div><span>Email</span> david@oconnellsales.com</div>
+                        <div><span>Phone</span> +1 (512) 555-8910</div>
+                        <div><span>LinkedIn</span> /in/davidoconnell</div>
+                    </div>
+                </div>
+                <div class="contact-right" data-aos="fade-left"><input type="text" placeholder="Full Name"><input
+                        type="email" placeholder="Email Address"><textarea
+                        placeholder="Tell me about your sales goals or opportunity..."></textarea><button
+                        class="submit-btn">Schedule a call →</button></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 David O'Connell — Strategic Sales Management. All rights reserved. ✷ Let's close big deals.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) navbar.style.padding = '15px 0';
+            else navbar.style.padding = '25px 0';
+        });
+    </script>
+</body>
+
+</html>
